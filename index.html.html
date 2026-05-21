@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Юридическая компания "ZащитаПрав" | Защита ваших прав</title>
+    <!-- Google Fonts для современной типографики -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (бесплатные иконки) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafcff;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* контейнер для удобства */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ========== ШАПКА (НАВИГАЦИЯ) ========== */
+        .navbar {
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #0b2b40, #1e5a6f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            color: #c27c2e;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #2c4b5e;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            color: #c0681e;
+        }
+        .btn-consult {
+            background: #1e5a6f;
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .btn-consult:hover {
+            background: #0b3b4b;
+            transform: translateY(-2px);
+        }
+
+        /* ========== ГЕРО-СЕКЦИЯ ========== */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(105deg, #ffffff 40%, #f3f7fc 100%);
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1;
+            min-width: 280px;
+        }
+        .hero-badge {
+            background: #eaf4f0;
+            color: #1e5a6f;
+            font-weight: 600;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+        }
+        .hero-content h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #0a2a38;
+            letter-spacing: -1px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #3d5a6c;
+            margin-bottom: 32px;
+            max-width: 90%;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #c27c2e;
+            border: none;
+            padding: 14px 32px;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 48px;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 18px rgba(194, 124, 46, 0.2);
+        }
+        .btn-primary:hover {
+            background: #a5621f;
+            transform: translateY(-3px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #1e5a6f;
+            padding: 12px 28px;
+            font-weight: 700;
+            border-radius: 48px;
+            color: #1e5a6f;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: #eef3f7;
+            border-color: #c27c2e;
+            color: #c27c2e;
+        }
+        .hero-stats {
+            flex: 0.8;
+            background: white;
+            border-radius: 32px;
+            padding: 32px 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.07);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+        .stat-number {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #c27c2e;
+            line-height: 1;
+        }
+        .stat-label {
+            font-weight: 500;
+            color: #2c4b5e;
+        }
+
+        /* ========== УСЛУГИ (SERVICES) ========== */
+        .services {
+            padding: 90px 0;
+            background: white;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0a2a38;
+            margin-bottom: 12px;
+        }
+        .section-header p {
+            font-size: 1.1rem;
+            color: #5e7e91;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 32px 28px;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.05);
+            border: 1px solid #eaedf0;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #dccfbf;
+            box-shadow: 0 24px 36px -14px rgba(0,0,0,0.1);
+        }
+        .service-icon {
+            font-size: 2.6rem;
+            color: #c27c2e;
+            margin-bottom: 22px;
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        .service-card p {
+            color: #4c6e82;
+            margin-bottom: 24px;
+        }
+        .service-link {
+            color: #1e5a6f;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .service-link i {
+            transition: transform 0.2s;
+        }
+        .service-link:hover {
+            color: #c27c2e;
+        }
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ========== О КОМПАНИИ (ПРЕИМУЩЕСТВА) ========== */
+        .about {
+            background: #f4f9fe;
+            padding: 90px 0;
+        }
+        .about-flex {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1.2;
+        }
+        .about-text h2 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #0a2a38;
+        }
+        .about-text p {
+            margin-bottom: 24px;
+            color: #2c4b5e;
+        }
+        .feature-list {
+            list-style: none;
+            margin-top: 28px;
+        }
+        .feature-list li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+        .feature-list i {
+            color: #c27c2e;
+            font-size: 1.3rem;
+            width: 28px;
+        }
+        .about-image {
+            flex: 0.9;
+            background: linear-gradient(145deg, #e5eef5, #ffffff);
+            border-radius: 48px;
+            padding: 48px 32px;
+            text-align: center;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 18px 28px -12px rgba(0, 0, 0, 0.05);
+        }
+        .about-image i {
+            font-size: 4.8rem;
+            color: #1e5a6f;
+            margin-bottom: 20px;
+        }
+
+        /* ========== ОТЗЫВ ========== */
+        .testimonial {
+            padding: 90px 0;
+            background: white;
+        }
+        .testimonial-card {
+            background: #fefaf5;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 48px;
+            padding: 48px;
+            text-align: center;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.05);
+            border: 1px solid #ffeedb;
+        }
+        .testimonial-card i.fa-quote-left {
+            font-size: 2.4rem;
+            color: #c27c2e;
+            opacity: 0.6;
+            margin-bottom: 16px;
+        }
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            font-weight: 500;
+            color: #1c3e4f;
+            margin: 20px 0;
+        }
+        .client-name {
+            font-weight: 800;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        .client-title {
+            color: #7a6a5a;
+        }
+
+        /* ========== КОНТАКТНАЯ ФОРМА ========== */
+        .contact {
+            background: #f2f5f9;
+            padding: 80px 0;
+        }
+        .contact-wrapper {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 48px;
+            padding: 48px 44px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.03);
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-info h3 {
+            font-size: 1.9rem;
+            margin-bottom: 24px;
+            color: #0a2a38;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .contact-detail i {
+            width: 32px;
+            font-size: 1.4rem;
+            color: #c27c2e;
+        }
+        .contact-form {
+            flex: 1.2;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 28px;
+            border: 1px solid #dfe6ed;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: 0.2s;
+            background: #fff;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #c27c2e;
+            box-shadow: 0 0 0 3px rgba(194,124,46,0.1);
+        }
+        .btn-submit {
+            background: #1e5a6f;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 44px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-submit:hover {
+            background: #0b3b4b;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #0a2632;
+            color: #ccdee6;
+            padding: 56px 0 32px;
+        }
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+        .footer-col p {
+            max-width: 280px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+        .footer-col h4 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 18px;
+            font-size: 1.2rem;
+        }
+        .footer-col a {
+            display: block;
+            color: #bbd2dd;
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        .footer-col a:hover {
+            color: #c27c2e;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 28px;
+            border-top: 1px solid #1f4a5c;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 850px) {
+            .container {
+                padding: 0 24px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+            .hero-grid {
+                flex-direction: column;
+            }
+            .contact-wrapper {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- НАВИГАЦИЯ -->
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="#" style="text-decoration: none;"><div class="logo"><span>ZащитаПрав</span></div></a>
+        <div class="nav-links">
+            <a href="#">Главная</a>
+            <a href="#services">Услуги</a>
+            <a href="#about">О нас</a>
+            <a href="#contact">Контакты</a>
+            <a href="#" class="btn-consult" id="nav-consult-btn">Консультация</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ГЕРО БЛОК -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-gavel"></i> 5 лет доверия</div>
+            <h1>Защитим права <br> и интересы бизнеса</h1>
+            <p>Комплексные юридические решения любой сложности. 98% дел выиграны в судах. Бесплатная первичная консультация.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" id="hero-consult-btn"><i class="fas fa-phone-alt"></i> Получить консультацию</button>
+                <button class="btn-outline" id="services-scroll-btn"><i class="fas fa-arrow-right"></i> Наши услуги</button>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Выигранных дел</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Успешных исходов</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Юридическая поддержка</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- УСЛУГИ с отдельными страницами -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Юридические услуги</h2>
+            <p>Полный спектр правовой помощи для частных лиц и корпоративных клиентов</p>
+        </div>
+        <div class="cards-grid">
+            <!-- Карточка Арбитраж -> страница arbitrage.html -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                <h3>Арбитраж</h3>
+                <p>Представительство в арбитражных судах, споры с контрагентами, взыскание задолженности.</p>
+                <a href="arbitrage.html" class="service-link" target="_blank">Подробнее <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <!-- Карточка Корпоративное право -> страница corporate.html -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <h3>Корпоративное право</h3>
+                <p>Регистрация, реорганизация, сопровождение сделок M&A и защита акционеров.</p>
+                <a href="corporate.html" class="service-link" target="_blank">Подробнее <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <!-- Карточка Недвижимость -> страница realty.html -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <h3>Недвижимость</h3>
+                <p>Сопровождение сделок, споры с застройщиками, земельные вопросы.</p>
+                <a href="realty.html" class="service-link" target="_blank">Подробнее <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <!-- Карточка Семейное право -> страница family.html -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-gavel"></i></div>
+                <h3>Семейное право</h3>
+                <p>Разводы, раздел имущества, алименты, защита прав детей.</p>
+                <a href="family.html" class="service-link" target="_blank">Подробнее <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>  
+    </div>
+</section>
+
+<!-- О КОМПАНИИ (преимущества) -->
+<section class="about" id="about">
+    <div class="container about-flex">
+        <div class="about-text">
+            <h2>Ваша правовая опора <br> с 2020 года</h2>
+            <p>Юридическая компания «ZaщитаПрав» объединяет профессионалов высокой квалификации: адвокатов, налоговых консультантов и судебных юристов. Мы работаем на результат и сохраняем репутацию безупречных партнеров.</p>
+            <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Индивидуальный подход к каждому делу</li>
+                <li><i class="fas fa-check-circle"></i> Прозрачная система ценообразования</li>
+                <li><i class="fas fa-check-circle"></i> Юридическая тайна и конфиденциальность</li>
+                <li><i class="fas fa-check-circle"></i> Представительство во всех инстанциях РФ</li>
+            </ul>
+        </div>
+        <div class="about-image">
+            <i class="fas fa-scale-balanced"></i>
+            <h3 style="margin-top: 8px;">Побеждаем <br> в сложных кейсах</h3>
+            <p style="margin-top: 12px;">Аккредитация при Минюсте</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- КОНТАКТЫ И ФОРМА -->
+<section class="contact" id="contact">
+    <div class="container contact-wrapper">
+        <div class="contact-info">
+            <h3><i class="fas fa-map-marker-alt" style="color: #c27c2e;"></i> Свяжитесь с нами</h3>
+            <div class="contact-detail">
+                <i class="fas fa-location-dot"></i>
+                <div>г. Нижний Новгород, ул. Сергея Есенина, д. 7</div>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-phone-alt"></i>
+                <div>+7 (777) 777-77-77</div>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-envelope"></i>
+                <div>info@Zashitaprav.ru</div>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-clock"></i>
+                <div>Пн–Пт: 09:00 – 20:00, Сб: 10:00 – 16:00</div>
+            </div>
+            <div style="margin-top: 32px;">
+                <i class="fab fa-telegram fa-2x" style="margin-right: 16px; color:#1e5a6f;"></i>
+                <i class="fab fa-whatsapp fa-2x" style="color:#1e5a6f;"></i>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h3>Напишите нам</h3>
+            <p style="margin-bottom: 24px;">Оставьте заявку — наш юрист свяжется с вами в течение часа.</p>
+            <form id="consultation-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" required id="name-input">
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Номер телефона" required id="phone-input">
+                </div>
+                <div class="form-group">
+                    <select id="topic-select">
+                        <option value="Консультация">Консультация юриста</option>
+                        <option value="Арбитраж">Арбитражный спор</option>
+                        <option value="Договор">Составление договора</option>
+                        <option value="Другое">Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea rows="3" placeholder="Кратко опишите ситуацию..." id="message-input"></textarea>
+                </div>
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Отправить запрос</button>
+            </form>
+            <div id="form-feedback" style="margin-top: 20px; font-weight: 500;"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ФУТЕР -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="color: white; background: none; -webkit-background-clip: unset;"><span style="color:#c27c2e;">ZащитаПрав</span></div>
+                <p>Профессиональная правовая защита. Доверие — основа нашего партнерства.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <a href="#">Главная</a>
+                <a href="#services">Услуги</a>
+                <a href="#about">О нас</a>
+                <a href="#contact">Контакты</a>
+            </div>
+            <div class="footer-col">
+                <h4>Помощь</h4>
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Вопросы и ответы</a>
+                <a href="#">Карьера в компании</a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Юридическая компания «ZaщитаПрав». Все права защищены.
+        </div>
+    </div>
+</footer>
+
+<!-- НЕБОЛЬШОЙ JAVASCRIPT ДЛЯ ИНТЕРАКТИВА (АНИМАЦИЯ ФОРМЫ, СКРОЛЛЫ) -->
+<script>
+    // Плавный скролл к услугам
+    const servicesBtn = document.getElementById('services-scroll-btn');
+    const servicesSection = document.getElementById('services');
+    if(servicesBtn && servicesSection) {
+        servicesBtn.addEventListener('click', () => {
+            servicesSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    // Все кнопки "консультация" вызывают скролл к контактам + подсветку
+    function scrollToContact() {
+        const contactSection = document.getElementById('contact');
+        if(contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+            const formTitle = document.querySelector('.contact-form h3');
+            if(formTitle) formTitle.style.color = '#c27c2e';
+            setTimeout(() => { if(formTitle) formTitle.style.color = ''; }, 1200);
+        }
+    }
+
+    const heroConsultBtn = document.getElementById('hero-consult-btn');
+    if(heroConsultBtn) heroConsultBtn.addEventListener('click', scrollToContact);
+    const navConsultBtn = document.getElementById('nav-consult-btn');
+    if(navConsultBtn) navConsultBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        scrollToContact();
+    });
+
+    // Обработка отправки формы с демо-уведомлением
+    const consultForm = document.getElementById('consultation-form');
+    const feedbackDiv = document.getElementById('form-feedback');
+    if(consultForm) {
+        consultForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name-input')?.value.trim();
+            const phone = document.getElementById('phone-input')?.value.trim();
+            if(!name || !phone) {
+                feedbackDiv.innerHTML = '<span style="color:#b85c00;">❌ Пожалуйста, укажите имя и телефон для связи</span>';
+                return;
+            }
+            // Имитация отправки
+            feedbackDiv.innerHTML = '<span style="color:#1e5a6f;">✅ Спасибо! Наш юрист свяжется с вами в ближайшее время.</span>';
+            consultForm.reset();
+            setTimeout(() => {
+                feedbackDiv.innerHTML = '';
+            }, 5000);
+        });
+    }
+
+    // Добавим лёгкий анимированный эффект для карточек
+    const cards = document.querySelectorAll('.service-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.4s ease';
+        observer.observe(card);
+    });
+
+    // Небольшая заглушка: если переход на страницы отсутствуют, выводим информативное сообщение, но без нарушения логики.
+    // Для удобства пользователя, если страница не найдена, поясним, как создать контент.
+    // Это улучшит UX, т.к. ссылки ведут на реальные html-файлы.
+    const serviceLinks = document.querySelectorAll('.service-link');
+    serviceLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Проверка существования файла происходит на нативной загрузке браузера.
+            // Мы ничего не отменяем, просто даем подсказку в консоль.
+            console.log(`Переход на страницу: ${this.getAttribute('href')}. Создайте файл с таким именем для полноценной работы.`);
+        });
+    });
+</script>
+</body>
+</html
